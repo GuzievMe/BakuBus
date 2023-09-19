@@ -1,0 +1,78 @@
+﻿<Window x:Class="WpfMeSelf_7_July7_BingMap.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMeSelf_7_July7_BingMap"
+        xmlns:map ="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" 
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <ControlTemplate  x:Key="PushPinResource" TargetType ="map:Pushpin">
+            <Grid>
+                <!--<Ellipse  Width=" 25" Height="25">
+                    <Ellipse.Fill  >
+                        <LinearGradientBrush >
+                            <GradientStop Offset="0.3" Color="CadetBlue" />
+                            <GradientStop Offset=" 0.9" Color="Black" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>-->
+                <!--<Border Width="30" Height=" 30" CornerRadius=" 15" Background = "CadetBlue"  >
+                    <Label Content="3" FontSize=" 15" Foreground = "Wheat" HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                </Border>-->
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Grid>
+        <!--<Grid.RowDefinitions  >
+            <RowDefinition Height=" 2*"/>
+            <RowDefinition  Height=" *"/>
+        </Grid.RowDefinitions>-->
+        <map:Map Name = "CredKey"  Center="40.4, 49.6" ZoomLevel = "10" Mode = "Road" >
+
+            <ComboBox Name="Combo" ItemsSource="{Binding Route}" Margin=" 5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width=" 100" Height=" 30"
+                      SelectedItem="SelectedCBox_Item"  
+                      />
+            <!--<map:Pushpin Name="pushpin"  Template="{DynamicResource PushPinResource }">
+            </map:Pushpin>-->
+        </map:Map>
+
+
+
+
+
+
+
+
+        <!--<ComboBox ItemsSource="{Binding}">
+            
+        </ComboBox>-->
+
+
+
+
+
+
+
+        <!--<ListView ItemsSource="{Binding MyBuses.BUS}" Grid.Row=" 1">
+            <ListView.View >
+                <GridView >
+                    <GridView.Columns >
+                        <GridViewColumn DisplayMemberBinding="{Binding attributes.BUS_ID}" Header="Bus_Id" />
+                        <GridViewColumn DisplayMemberBinding="{Binding attributes.PREV_STOP}" Header="Prev_Stop"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding attributes.LATITUDE}" Header="Latitude" />
+                        <GridViewColumn DisplayMemberBinding="{Binding attributes.LONGITUDE}" Header="Longitude"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding attributes.DISPLAY_ROUTE_CODE}" Header="DISPLAY_ROUTE_CODE"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>-->
+
+
+
+
+    </Grid>
+
+</Window>
